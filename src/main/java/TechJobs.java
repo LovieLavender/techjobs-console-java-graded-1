@@ -77,7 +77,7 @@ public class TechJobs {
         Boolean validChoice = false;
         String[] choiceKeys = new String[choices.size()];
 
-        // Put the choices in an ordered structure so we can
+        // Put the choices in an ordered structure,so we can
         // associate an integer with each one
         int i = 0;
         for (String choiceKey : choices.keySet()) {
@@ -119,7 +119,23 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+//            String[] jobsArray = new String[someJobs.size()];
+//            someJobs.toArray(jobsArray);
+//        HashMap <String, String> jobs = new HashMap();
+        for (HashMap<String, String> jobs: JobData.findAll()) {
+            someJobs.add(jobs);
+//            System.out.println(jobs);
+            for (Map.Entry entry: jobs.entrySet()) {
+                System.out.println("\n*****" + entry.getKey() + ":" + entry.getValue() + "\n*****");
 
-        System.out.println("printJobs is not implemented yet");
+            }
+
+        }
+//        if (someJobs.equals("null")) {
+//            System.out.println("No Results");
+//    } else (someJobs.equals())
+
+
+        System.out.println();
     }
 }
